@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../api.service'
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,HttpClientModule],
+  imports: [CommonModule,HttpClientModule,NgxPaginationModule],
 
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class HomeComponent {
   sliderData: any[] = [];
   listData: any[] = [];
+  p: number = 1; // Current page for pagination
 
   constructor(private apiService: ApiService) {}
 
@@ -35,5 +37,22 @@ export class HomeComponent {
         console.error('Veri çekme hatası:', error);
       }
     );
+  }
+
+  getTotalPages(): number {
+    // Calculate total pages based on the total items and items per page
+    return Math.ceil(this.listData.length / 20);
+  }
+
+  goToPreviousPage(): void {
+    if (this.p > 1) {
+      this.p--;
+    }
+  }
+
+  goToNextPage(): void {
+    if (this.p < this.getTotalPages()) {
+      this.p++;
+    }
   }
 }
