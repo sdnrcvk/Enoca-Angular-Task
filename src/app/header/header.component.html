@@ -39,14 +39,15 @@
             <a class="nav-link" [routerLink]="['/about']">Hakkımda</a>
           </li>
           <li class="nav-item dropdown">
-            <a [routerLink]="['/categories']" class="nav-link dropdown-toggle">Kategoriler</a>
+            <a [routerLink]="['/category']" class="nav-link dropdown-toggle">Kategoriler</a>
             <div class="dropdown-content dropdown-menu">
-              <a class="dropdown-item" href="#">İş</a>
-              <a class="dropdown-item" href="#">Eğlence</a>
-              <a class="dropdown-item" href="#">Genel</a>
-              <a class="dropdown-item" href="#">Bilim</a>
-              <a class="dropdown-item" href="#">Spor</a>
-              <a class="dropdown-item" href="#">Teknoloji</a>
+              <a class="dropdown-item" [routerLink]="['/category-detail', 'business']">İş</a>
+              <a class="dropdown-item" [routerLink]="['/category-detail', 'entertainment']">Eğlence</a>
+              <a class="dropdown-item" [routerLink]="['/category-detail', 'general']">Genel</a>
+              <a class="dropdown-item" [routerLink]="['/category-detail', 'health']">Sağlık</a>
+              <a class="dropdown-item" [routerLink]="['/category-detail', 'science']">Bilim</a>
+              <a class="dropdown-item" [routerLink]="['/category-detail', 'sports']">Spor</a>
+              <a class="dropdown-item" [routerLink]="['/category-detail', 'technology']">Teknoloji</a>
             </div>
           </li>
         </ul>

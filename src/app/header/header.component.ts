@@ -18,3 +18,4 @@ export class HeaderComponent {
   faInstagram=faInstagram;
   faSearch=faSearch;
 }
+
