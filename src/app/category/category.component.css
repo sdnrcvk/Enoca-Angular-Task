@@ -1,0 +1,21 @@
+/* styles.css veya componentinizin stil dosyasında */
+
+.card {
+    height: 100%; /* Kartın yüksekliğini 100% olarak ayarlar */
+}
+
+.card img {
+    height: 180px; /* Kart içindeki resmin yüksekliğini 100% olarak ayarlar */
+    object-fit:cover; /* Resmi kartın içine sığdırır ve oranlarını korur */
+    border: none;
+}
+
+.card-body {
+    height: 100%; /* Kart içindeki metin içeriğinin yüksekliğini 100% olarak ayarlar */
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group-item{
+    text-decoration: none;
+}
