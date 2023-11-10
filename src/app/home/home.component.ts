@@ -15,7 +15,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 export class HomeComponent {
   sliderData: any[] = [];
   listData: any[] = [];
-  p: number = 1; // Current page for pagination
+  p: number = 1; 
 
   constructor(private apiService: ApiService) {}
 
@@ -40,7 +40,7 @@ export class HomeComponent {
   }
 
   getTotalPages(): number {
-    // Calculate total pages based on the total items and items per page
+    
     return Math.ceil(this.listData.length / 20);
   }
 

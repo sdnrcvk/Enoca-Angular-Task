@@ -8,14 +8,14 @@
 }
 
 .img-bg {
-    width: 100%; /* Set the width to 100% for responsiveness */
+    width: 100%; 
     height: 100%;
     background-size: cover;
     background-position: center;
 }
 
 .contents {
-    width: 100%; /* Set the width to 100% for responsiveness */
+    width: 100%; 
     padding: 30px;
     background: #fff;
 }
@@ -67,46 +67,54 @@ a:hover {
     color: #f8b400;
 }
 
-/* Add your existing styles here, if any */
 
-  .news-section {
+.news-section {
     padding: 50px 0;
-  }
-  
-  .card {
-    height: 200px; /* Adjust the maximum height as needed */
+}
+
+.card {
+    height: 100%; 
     transition: transform 0.2s;
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
     transform: scale(1.05);
-  }
-  
-  
-  .card-title {
+}
+
+.card-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-  }
-  
-  .card-text {
+}
+
+.card-text {
     color: #555;
-  }
-  
-  .text-body-secondary {
+}
+
+.text-body-secondary {
     color: #888;
-  }  
-  
-/* Responsive adjustments */
+}  
+
+.card img {
+    height: 180px; 
+    object-fit:cover; 
+    border: none;
+}
 @media (min-width: 768px) {
     .half-post-entry {
         display: flex;
     }
 
     .img-bg {
-        width: 50%; /* Adjust the width for larger screens */
+        width: 50%; 
     }
 
     .contents {
-        width: 50%; /* Adjust the width for larger screens */
+        width: 50%; 
     }
 }
