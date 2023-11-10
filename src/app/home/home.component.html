@@ -29,7 +29,7 @@
           <div class="contents bg-light">
             <span class="caption">{{item.author}}</span>
             <h2>
-              <a href="blog-single.html"
+              <a href="#"
                 >{{item.title}}</a
               >
             </h2>
@@ -46,7 +46,7 @@
                 ><a href="#">Dave Rogers</a> in <a href="#">Food</a></span
               >
               <span class="date-read"
-                >Jun 14 <span class="mx-1">•</span> 3 min read
+                >{{item.publishedAt}} <span class="mx-1">•</span> 3 min read
                 <span class="icon-star2"></span
               ></span>
             </div>
@@ -77,7 +77,7 @@
   <section class="news-section mt-5">
     <div class="container">
       <div class="row">
-        <div *ngFor="let item of listData" class="col-md-6 col-sm-12 mb-4">
+        <div *ngFor="let item of listData | paginate: { itemsPerPage: 10, currentPage: p }" class="col-md-6 col-sm-12 mb-4">
           <div class="card border-0 shadow">
             <div class="row g-0">
               <div class="col-md-4">
@@ -100,6 +100,13 @@
           </div>
         </div>
       </div>
+
+        <pagination-controls (pageChange)="p = $event" (pageBoundsCorrection)="p = $event"></pagination-controls>
+
+        <div class="pagination-buttons">
+            <button (click)="goToPreviousPage()" [disabled]="p === 1">Previous Page</button>
+            <button (click)="goToNextPage()" [disabled]="p === getTotalPages()">Next Page</button>
+        </div>
     </div>
   </section>
 </div>
