@@ -1,0 +1,191 @@
+body {
+  line-height: 1.7;
+  color: black;
+  font-weight: 300;
+  font-size: 0.9rem;
+  background-color: #fff;
+  font-family: "Cabin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+a {
+  transition: 0.3s all ease;
+  text-decoration: none;
+  font-family: "B612 Mono", monospace;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.text-black {
+  color: #000 !important;
+}
+
+.navbar {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header-top > .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header{
+  border-bottom:1px solid #ccc;
+}
+
+.brand {
+  font-size: 2rem;
+  color: #000;
+  font-family:"Cabin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+}
+
+.top-social a {
+  color: #000;
+}
+
+.top-social a:hover {
+  color: #777;
+}
+
+.search-form .form-control {
+  margin-right: 10px;
+  height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+  border: none;
+  background: #fff;
+  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid #ccc;
+  font-size: large;
+}
+
+.search-form .form-control:active,
+.search-form .form-control:focus {
+  border-bottom: 1px solid #ccc;
+}
+
+.search-form .btn {
+  border-radius: 30px;
+  background: #000;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-color: #000;
+}
+
+.search-form .btn:hover {
+  background: #8bc34a;
+  border-color: #8bc34a;
+}
+
+.search-form h2 {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.search-form p {
+  font-size: 0.9rem;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+}
+
+/* Ek responsive tasarım CSS kodları */
+@media (max-width: 768px) {
+  .header-top {
+    text-align: center;
+  }
+
+  .social-media,
+  .search-form {
+    margin-top: 20px;
+  }
+
+  .search-input,
+  .search-button {
+    width: 100%;
+  }
+
+  .navbar {
+    text-align: left;
+  }
+
+  .navbar-toggler {
+    margin-top: 10px;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .navbar-toggler:focus + .navbar-nav,
+  .navbar-toggler:active + .navbar-nav,
+  .navbar-toggler.collapsed + .navbar-nav {
+    display: block;
+  }
+
+  .nav-link {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    text-align: left;
+  }
+}
