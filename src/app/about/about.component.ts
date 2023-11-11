@@ -16,6 +16,7 @@ export class AboutComponent {
   collaborationInterest: string = "React Projects";
   seekingHelpWith: string = "Laravel and .Net";
   website: string = "www.sedanurcevik.com";
+  instagramProfile: string = "https://www.instagram.com/engineerwhocodes/";
   mediumProfile: string = "https://medium.com/@sdnrcvk";
   githubProfile:string="https://github.com/sdnrcvk";
   linkedinProfile: string = "https://www.linkedin.com/in/sedanurcevik/";

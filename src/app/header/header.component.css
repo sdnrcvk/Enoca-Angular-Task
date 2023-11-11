@@ -142,7 +142,6 @@ li.dropdown {
   letter-spacing: .05rem;
 }
 
-/* Ek responsive tasarım CSS kodları */
 @media (max-width: 768px) {
   .header-top {
     text-align: center;
@@ -175,7 +174,7 @@ li.dropdown {
 
   .navbar-toggler:focus + .navbar-nav,
   .navbar-toggler:active + .navbar-nav,
-  .navbar-toggler.collapsed + .navbar-nav {
+  .navbar-toggler:not(.collapsed) + .navbar-nav {
     display: block;
   }
 

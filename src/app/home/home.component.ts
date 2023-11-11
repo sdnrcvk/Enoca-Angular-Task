@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ApiService } from '../api.service'
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +17,9 @@ export class HomeComponent {
   sliderData: any[] = [];
   listData: any[] = [];
   p: number = 1; 
+  receivedSearchQueryData: string = '';
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService,private dataService: DataService) {}
 
   ngOnInit(): void {
     this.apiService.getNewsData().subscribe(
@@ -32,6 +34,11 @@ export class HomeComponent {
         console.log('Slider Veriler:', this.sliderData);
         console.log('Diger Veriler:', this.listData);
 
+        // Header componentinden servis aracılığyla gönderilen veriyi servisten al
+        this.dataService.searchQuery$.subscribe(query => {
+          console.log('Search query Home Component içinde:', query);
+          this.receivedSearchQueryData=query;
+        });
       },
       (error) => {
         console.error('Veri çekme hatası:', error);

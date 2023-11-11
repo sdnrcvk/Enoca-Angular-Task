@@ -23,15 +23,25 @@
       ></button>
     </div>
     <div class="carousel-inner">
-      <div *ngFor="let item of sliderData; let i = index" class="carousel-item" [class.active]="i === 0">
+      <div
+        *ngFor="let item of sliderData; let i = index"
+        class="carousel-item"
+        [class.active]="i === 0"
+      >
         <div class="half-post-entry d-block d-lg-flex">
-            <img src="{{ item.urlToImage ? item.urlToImage : 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" class="img-bg" alt="..." />
+          <img
+            src="{{
+              item.urlToImage
+                ? item.urlToImage
+                : 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            }}"
+            class="img-bg"
+            alt="..."
+          />
           <div class="contents bg-light">
-            <span class="caption">{{item.author}}</span>
+            <span class="caption">{{ item.author }}</span>
             <h2>
-              <a href="{{item.url}}"
-                >{{item.title}}</a
-              >
+              <a href="{{ item.url }}">{{ item.title }}</a>
             </h2>
             <p class="mb-3">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -46,7 +56,7 @@
                 ><a href="#">Dave Rogers</a> in <a href="#">Food</a></span
               >
               <span class="date-read"
-                >{{item.publishedAt}} <span class="mx-1">•</span> 3 min read
+                >{{ item.publishedAt }} <span class="mx-1">•</span> 3 min read
                 <span class="icon-star2"></span
               ></span>
             </div>
@@ -75,27 +85,42 @@
   </div>
 
   <section class="news-section mt-5">
+    <h3 class="text-center mb-5" *ngIf="receivedSearchQueryData">
+      Bunu mu aradınız? {{ receivedSearchQueryData }}
+    </h3>
     <div class="container">
       <div class="row">
-        <div *ngFor="let item of listData | paginate: { itemsPerPage: 10, currentPage: p }" class="col-md-6 col-sm-12 mb-4">
+        <div
+          *ngFor="
+            let item of listData
+              | paginate : { itemsPerPage: 10, currentPage: p }
+          "
+          class="col-md-6 col-sm-12 mb-4"
+        >
           <div class="card border-0 shadow">
             <div class="row g-0">
               <div class="col-md-4">
                 <div class="card-img">
-                  <a href="{{item.url}}">
-                  <img
-                    src="{{ item.urlToImage ? item.urlToImage : 'https://images.unsplash.com/photo-1624269305548-1527ef905ff6?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}"
-                    class="card-img-top rounded-start img-fluid"
-                    alt="News Image 1"
-                  />
-                </a>
-              </div>
+                  <a href="{{ item.url }}">
+                    <img
+                      src="{{
+                        item.urlToImage
+                          ? item.urlToImage
+                          : 'https://images.unsplash.com/photo-1624269305548-1527ef905ff6?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                      }}"
+                      class="card-img-top rounded-start img-fluid"
+                      alt="News Image 1"
+                    />
+                  </a>
+                </div>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <a href="{{item.url}}"><h6 class="card-title mb-3">{{item.title}}</h6></a>
+                  <a href="{{ item.url }}"
+                    ><h6 class="card-title mb-3">{{ item.title }}</h6></a
+                  >
                   <p class="card-text text-muted small">
-                    {{item.author}}
+                    {{ item.author }}
                   </p>
                 </div>
               </div>
@@ -104,12 +129,22 @@
         </div>
       </div>
 
-        <pagination-controls (pageChange)="p = $event" (pageBoundsCorrection)="p = $event"></pagination-controls>
-
-        <div class="pagination-buttons">
-            <button (click)="goToPreviousPage()" [disabled]="p === 1">Previous Page</button>
-            <button (click)="goToNextPage()" [disabled]="p === getTotalPages()">Next Page</button>
+      <div class="d-flex flex-column align-items-center mt-3">
+        <pagination-controls
+          (pageChange)="p = $event"
+          (pageBoundsCorrection)="p = $event"
+        ></pagination-controls>
+      
+        <div class="pagination-buttons mt-2">
+          <button (click)="goToPreviousPage()" [disabled]="p === 1" class="btn btn-primary me-2">
+            Önceki
+          </button>
+          <button (click)="goToNextPage()" [disabled]="p === getTotalPages()" class="btn btn-primary mx-2">
+            Sonraki
+          </button>
         </div>
+      </div>
+
     </div>
   </section>
 </div>
