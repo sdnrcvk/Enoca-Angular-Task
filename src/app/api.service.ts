@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   private apiUrl = 'https://newsapi.org/v2/top-headlines?country=tr&';
-  private apiKey="676f017549224f488970f1835f9db971" 
+  private apiKey="3fd6a180014b4543966c03f577838167" //Yeni API Key
 
   constructor(private http: HttpClient) { }
 
